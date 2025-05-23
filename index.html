@@ -1,4 +1,153 @@
+cód. atual
+
+
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lean Company | Plataforma de Treinamento Interno</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-lean: #395B7A;
+      --azul-hover: #22364A;
+      --branco: #FFFFFF;
+      --cinza-txt: #232323;
+      --cinza-bg: #F7F9FB;
+      --card-bg: #F1F6FC;
+      --botao: #395B7A;
+      --botao-hover: #22364A;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      background: var(--cinza-bg);
+      color: var(--cinza-txt);
+    }
+    header {
+      background: var(--azul-lean);
+      color: var(--branco);
+      padding: 28px 24px 18px 24px;
+      box-shadow: 0 2px 6px #0001;
+    }
+    .header-content {
+      display: flex; align-items: center; gap: 24px;
+    }
+    .header-logo { height: 62px; background: transparent; }
+    nav {
+      background: var(--azul-lean);
+      color: var(--branco);
+      padding: 13px 24px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 8px;
+      transition: background 0.2s;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    nav a:hover, nav a.active {
+      background: var(--azul-hover);
+    }
+    main {
+      max-width: 1050px;
+      margin: 36px auto 0 auto;
+      padding: 32px 16px;
+      background: var(--branco);
+      border-radius: 18px;
+      box-shadow: 0 4px 28px #0002;
+    }
+    section { margin-bottom: 44px; }
+    h1, h2 { color: var(--azul-lean); }
+    h1 { margin-bottom: 0.5em; }
+    h2 { margin-top: 40px; margin-bottom: 0.6em; }
+    ul, ol { padding-left: 22px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 18px 18px 12px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 10px #0001;
+    }
+    .download-btn {
+      display: inline-block;
+      background: var(--botao);
+      color: var(--branco);
+      padding: 8px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      margin-top: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: var(--botao-hover); }
+    .faq-item {
+      background: #E7F0FA;
+      border-left: 5px solid var(--azul-lean);
+      margin-bottom: 10px;
+      padding: 13px 16px;
+      border-radius: 8px;
+    }
+    .checklist {
+      margin-top: 14px;
+      background: var(--cinza-bg);
+      border: 1px solid #D6E4F7;
+      border-radius: 7px;
+      padding: 13px 18px;
+    }
+    .footer {
+      text-align: center;
+      color: #395B7A;
+      font-size: 14px;
+      margin-top: 40px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 700px) {
+      main { padding: 10px; }
+      header, nav { padding: 16px 8px; }
+      .header-content { flex-direction: column; gap: 10px; }
+      .header-logo { height: 46px; }
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+      document.getElementById('link-'+id).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+    window.onload = function() { showSection('home'); }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo Lean Company" class="header-logo">
+      <div>
+        <h1>Lean Company | Plataforma Interna de Treinamento</h1>
+        <p style="margin-top:8px; font-size:1.08em;">Sua central de capacitação, onboarding e desenvolvimento contínuo.</p>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <a href="#" id="link-home" onclick="showSection('home')">Início</a>
+    <a href="#" id="link-trilhas" onclick="showSection('trilhas')">Trilhas</a>
+    <a href="#" id="link-modulos" onclick="showSection('modulos')">Módulos</a>
+    <a href="#" id="link-materiais" onclick="showSection('materiais')">Materiais</a>
+    <a href="#" id="link-exercicios" onclick="showSection('exercicios')">Exercícios</a>
+    <a href="#" id="link-faq" onclick="showSection('faq')">FAQ</a>
+    <a href="#" id="link-habilidades" onclick="showSection('habilidades')">Desenvolvimento</a>
+    <a href="#" id="link-contato" onclick="showSection('contato')">Contato</a>
+  </nav>
+  <main>
+    <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -260,6 +409,13 @@
         </ul>
       </div>
     </section>
+  </main>
+  <div class="footer">
+    &copy; Lean Company - Plataforma Interna | Atualizado em 2025
+  </div>
+</body>
+</html>
+
   </main>
   <div class="footer">
     &copy; Lean Company - Plataforma Interna | Atualizado em 2025
