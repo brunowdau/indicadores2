@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lean Company | Plataforma de Treinamento Interno</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f7f9fb; color: #222; }
+    header { background: #1e2e44; color: #fff; padding: 32px 24px 16px 24px; box-shadow: 0 2px 6px #0001;}
+    nav { background: #243854; color: #fff; padding: 12px 24px; display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 7px; transition: background 0.2s; font-weight: 500;}
+    nav a:hover, nav a.active { background: #506fa6; }
+    main { max-width: 1050px; margin: 36px auto 0 auto; padding: 32px 16px; background: #fff; border-radius: 18px; box-shadow: 0 4px 28px #0002; }
+    section { margin-bottom: 44px; }
+    h1, h2 { color: #1e2e44; }
+    h1 { margin-bottom: 0.5em; }
+    h2 { margin-top: 40px; margin-bottom: 0.6em; }
+    ul, ol { padding-left: 22px; }
+    .card { background: #eef3fa; border-radius: 14px; padding: 18px 18px 12px 18px; margin-bottom: 18px; box-shadow: 0 2px 10px #0001;}
+    .download-btn { display: inline-block; background: #2e89f7; color: #fff; padding: 8px 22px; border-radius: 7px; text-decoration: none; margin-top: 8px; font-weight: 500; transition: background 0.2s;}
+    .download-btn:hover { background: #1e6ecf;}
+    .faq-item { background: #f6f7fa; border-left: 5px solid #2e89f7; margin-bottom: 10px; padding: 13px 16px; border-radius: 8px;}
+    .checklist { margin-top: 14px; background: #f7faff; border: 1px solid #d6e4f7; border-radius: 7px; padding: 13px 18px;}
+    .footer { text-align: center; color: #7d7d7d; font-size: 14px; margin-top: 40px; margin-bottom: 18px; }
+    @media (max-width: 700px) {
+      main { padding: 10px; }
+      header, nav { padding: 16px 8px; }
+    }
+  </style>
+  <script>
+    // Navegação simples para página única
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+      document.getElementById('link-'+id).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+    window.onload = function() {
+      showSection('home');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Lean Company | Plataforma Interna de Treinamento</h1>
+    <p style="margin-top:8px; font-size:1.08em;">Sua central de capacitação, onboarding e desenvolvimento contínuo.</p>
+  </header>
+  <nav>
+    <a href="#" id="link-home" onclick="showSection('home')">Início</a>
+    <a href="#" id="link-trilhas" onclick="showSection('trilhas')">Trilhas</a>
+    <a href="#" id="link-modulos" onclick="showSection('modulos')">Módulos</a>
+    <a href="#" id="link-materiais" onclick="showSection('materiais')">Materiais</a>
+    <a href="#" id="link-exercicios" onclick="showSection('exercicios')">Exercícios</a>
+    <a href="#" id="link-faq" onclick="showSection('faq')">FAQ</a>
+    <a href="#" id="link-habilidades" onclick="showSection('habilidades')">Desenvolvimento</a>
+    <a href="#" id="link-contato" onclick="showSection('contato')">Contato</a>
+  </nav>
+  <main>
+    <!-- HOME -->
+    <section id="home">
+      <h2>Bem-vindo!</h2>
+      <div class="card">
+        <p>
+          Esta plataforma reúne os principais conteúdos, ferramentas e materiais para acelerar sua evolução como consultor Lean.<br>
+          Aqui você encontra módulos de aprendizado, cases reais, tutoriais de ferramentas, exercícios práticos e muito mais.<br><br>
+          <strong>Nosso compromisso:</strong> desenvolver talentos, compartilhar conhecimento e criar uma cultura de excelência na entrega ao cliente.
+        </p>
+      </div>
+      <h3>Navegação rápida:</h3>
+      <ul>
+        <li><strong>Trilhas de Aprendizado:</strong> visão geral do caminho do iniciante ao avançado.</li>
+        <li><strong>Módulos Temáticos:</strong> conteúdos aprofundados em finanças, processos, comercial, produção, ferramentas, postura consultiva, etc.</li>
+        <li><strong>Materiais de Apoio:</strong> downloads de planilhas, slides, checklists, vídeos e artigos de referência.</li>
+        <li><strong>Exercícios e Avaliações:</strong> desafios práticos para validar o conhecimento adquirido.</li>
+        <li><strong>FAQ:</strong> dúvidas frequentes e orientações rápidas.</li>
+        <li><strong>Desenvolvimento & Matriz de Habilidades:</strong> acompanhe sua evolução e próximos passos.</li>
+        <li><strong>Contato & Suporte:</strong> saiba quem pode ajudar em cada tema.</li>
+      </ul>
+    </section>
 
+    <!-- TRILHAS -->
+    <section id="trilhas" style="display:none;">
+      <h2>Trilhas de Aprendizado</h2>
+      <div class="card">
+        <strong>Onboarding Lean Company</strong>
+        <ol>
+          <li>Apresentação da empresa e cultura</li>
+          <li>Visão geral dos clientes e setores atendidos</li>
+          <li>Ferramentas essenciais: Excel, Power BI, Monday.com, Power Query</li>
+          <li>Processos internos e entrega ao cliente</li>
+          <li>Postura, comunicação e ética consultiva</li>
+        </ol>
+      </div>
+      <div class="card">
+        <strong>Trilha Avançada</strong>
+        <ol>
+          <li>Gestão financeira aprofundada e construção de indicadores</li>
+          <li>Mapeamento e redesenho de processos (Lean, Kanban, VSM)</li>
+          <li>PCP, produção enxuta e gestão de estoques</li>
+          <li>Gestão comercial, curva ABC, funil de vendas</li>
+          <li>Automação de relatórios e integrações de dados</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MÓDULOS -->
+    <section id="modulos" style="display:none;">
+      <h2>Módulos Temáticos</h2>
+      <div class="card">
+        <strong>Lean Company & Mentalidade Consultiva</strong>
+        <ul>
+          <li>História, valores e cultura Lean</li>
+          <li>Papel do consultor, ética, exemplos reais</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Gestão Financeira</strong>
+        <ul>
+          <li>DRE Gerencial, Fluxo de Caixa, Precificação</li>
+          <li>Margem de Contribuição, Ciclo Financeiro</li>
+          <li>Simulações e exercícios práticos</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Gestão de Processos e Produção</strong>
+        <ul>
+          <li>Lean, Kanban, VSM, PCP</li>
+          <li>Redesenho de processos e eliminação de desperdícios</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Gestão Comercial & Indicadores</strong>
+        <ul>
+          <li>Curva ABC, Funil de vendas, Ticket Médio</li>
+          <li>Indicadores comerciais e dashboards</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Ferramentas de Trabalho</strong>
+        <ul>
+          <li>Excel, Power BI, Power Query, Google Sheets</li>
+          <li>Monday.com, Zapier, integração de dados</li>
+          <li>Tutoriais práticos e dicas rápidas</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Comunicação e Postura Consultiva</strong>
+        <ul>
+          <li>Storytelling, apresentação de resultados</li>
+          <li>Relacionamento e construção de confiança</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MATERIAIS -->
+    <section id="materiais" style="display:none;">
+      <h2>Materiais de Apoio</h2>
+      <div class="card">
+        <strong>Planilhas e Modelos</strong>
+        <ul>
+          <li>Modelo de DRE Gerencial <a class="download-btn" href="#">Download</a></li>
+          <li>Template de Fluxo de Caixa <a class="download-btn" href="#">Download</a></li>
+          <li>Planilha de Curva ABC <a class="download-btn" href="#">Download</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Slides e PDFs</strong>
+        <ul>
+          <li>Apresentação Institucional <a class="download-btn" href="#">Download</a></li>
+          <li>Manual de Processos Internos <a class="download-btn" href="#">Download</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Vídeos e Tutoriais</strong>
+        <ul>
+          <li>Apresentação do Onboarding <a class="download-btn" href="#">Assistir</a></li>
+          <li>Como usar o Monday.com <a class="download-btn" href="#">Assistir</a></li>
+          <li>Dicas de Excel Avançado <a class="download-btn" href="#">Assistir</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXERCÍCIOS -->
+    <section id="exercicios" style="display:none;">
+      <h2>Exercícios e Avaliações</h2>
+      <div class="card">
+        <strong>Exercício 1 – DRE Gerencial</strong>
+        <p>Preencha a planilha de DRE com os dados do caso abaixo e identifique o ponto de equilíbrio.</p>
+        <a class="download-btn" href="#">Baixar caso prático</a>
+      </div>
+      <div class="card">
+        <strong>Exercício 2 – Mapeamento de Processo</strong>
+        <p>Crie um fluxograma de um processo produtivo do cliente e identifique gargalos.</p>
+        <a class="download-btn" href="#">Download modelo</a>
+      </div>
+      <div class="card">
+        <strong>Checklist – Onboarding</strong>
+        <div class="checklist">
+          <ul>
+            <li>[ ] Conhece a história e cultura da Lean Company</li>
+            <li>[ ] Domina as ferramentas básicas: Excel, Power BI, Monday.com</li>
+            <li>[ ] Sabe os processos de atendimento ao cliente</li>
+            <li>[ ] Já acompanhou uma visita presencial</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="display:none;">
+      <h2>FAQ – Dúvidas Frequentes</h2>
+      <div class="faq-item"><b>Como acesso os materiais e planilhas?</b><br>
+        Todos os arquivos estão na área "Materiais de Apoio". Se não encontrar, fale com o responsável indicado em "Contato".</div>
+      <div class="faq-item"><b>Com quem posso tirar dúvidas técnicas?</b><br>
+        Consulte a seção "Contato" para saber quem é referência em cada tema.</div>
+      <div class="faq-item"><b>Posso sugerir melhorias para o treinamento?</b><br>
+        Sim! Use o formulário de feedback ou envie direto no grupo oficial Lean.</div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" style="display:none;">
+      <h2>Desenvolvimento & Matriz de Habilidades</h2>
+      <div class="card">
+        <strong>Competências Essenciais por Fase</strong>
+        <ul>
+          <li><b>Iniciante:</b> Domínio de ferramentas básicas, entendimento de processos e postura consultiva.</li>
+          <li><b>Intermediário:</b> Elaboração de análises, construção de indicadores, autonomia em projetos simples.</li>
+          <li><b>Avançado:</b> Redesenho de processos, apresentações estratégicas, mentoria de novos colaboradores.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Trilha de Desenvolvimento</strong>
+        <ol>
+          <li>Finalizar Onboarding</li>
+          <li>Participar de 2 projetos como suporte</li>
+          <li>Conduzir um projeto supervisionado</li>
+          <li>Realizar apresentação para cliente</li>
+          <li>Tornar-se mentor de novos</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" style="display:none;">
+      <h2>Contato & Suporte</h2>
+      <div class="card">
+        <strong>Responsáveis pelo treinamento:</strong>
+        <ul>
+          <li>Bruno (sócio): dúvidas estratégicas, processos, onboarding</li>
+          <li>Daniel (sócio): dúvidas operacionais, ferramentas, projetos</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Suporte Técnico</strong>
+        <ul>
+          <li>Email: suporte@leancompany.com.br</li>
+          <li>WhatsApp: (xx) xxxxx-xxxx</li>
+          <li>Canal de dúvidas no Monday.com</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <div class="footer">
+    &copy; Lean Company - Plataforma Interna | Atualizado em 2025
+  </div>
+</body>
+</html>
