@@ -4,31 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lean Company | Plataforma de Treinamento Interno</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f7f9fb; color: #222; }
-    header { background: #1e2e44; color: #fff; padding: 32px 24px 16px 24px; box-shadow: 0 2px 6px #0001;}
-    nav { background: #243854; color: #fff; padding: 12px 24px; display: flex; gap: 16px; flex-wrap: wrap; }
-    nav a { color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 7px; transition: background 0.2s; font-weight: 500;}
-    nav a:hover, nav a.active { background: #506fa6; }
-    main { max-width: 1050px; margin: 36px auto 0 auto; padding: 32px 16px; background: #fff; border-radius: 18px; box-shadow: 0 4px 28px #0002; }
+    :root {
+      --azul-lean: #395B7A;
+      --azul-hover: #22364A;
+      --branco: #FFFFFF;
+      --cinza-txt: #232323;
+      --cinza-bg: #F7F9FB;
+      --card-bg: #F1F6FC;
+      --botao: #395B7A;
+      --botao-hover: #22364A;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      background: var(--cinza-bg);
+      color: var(--cinza-txt);
+    }
+    header {
+      background: var(--azul-lean);
+      color: var(--branco);
+      padding: 28px 24px 18px 24px;
+      box-shadow: 0 2px 6px #0001;
+    }
+    .header-content {
+      display: flex; align-items: center; gap: 24px;
+    }
+    .header-logo { height: 62px; background: transparent; }
+    nav {
+      background: var(--azul-lean);
+      color: var(--branco);
+      padding: 13px 24px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 8px;
+      transition: background 0.2s;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    nav a:hover, nav a.active {
+      background: var(--azul-hover);
+    }
+    main {
+      max-width: 1050px;
+      margin: 36px auto 0 auto;
+      padding: 32px 16px;
+      background: var(--branco);
+      border-radius: 18px;
+      box-shadow: 0 4px 28px #0002;
+    }
     section { margin-bottom: 44px; }
-    h1, h2 { color: #1e2e44; }
+    h1, h2 { color: var(--azul-lean); }
     h1 { margin-bottom: 0.5em; }
     h2 { margin-top: 40px; margin-bottom: 0.6em; }
     ul, ol { padding-left: 22px; }
-    .card { background: #eef3fa; border-radius: 14px; padding: 18px 18px 12px 18px; margin-bottom: 18px; box-shadow: 0 2px 10px #0001;}
-    .download-btn { display: inline-block; background: #2e89f7; color: #fff; padding: 8px 22px; border-radius: 7px; text-decoration: none; margin-top: 8px; font-weight: 500; transition: background 0.2s;}
-    .download-btn:hover { background: #1e6ecf;}
-    .faq-item { background: #f6f7fa; border-left: 5px solid #2e89f7; margin-bottom: 10px; padding: 13px 16px; border-radius: 8px;}
-    .checklist { margin-top: 14px; background: #f7faff; border: 1px solid #d6e4f7; border-radius: 7px; padding: 13px 18px;}
-    .footer { text-align: center; color: #7d7d7d; font-size: 14px; margin-top: 40px; margin-bottom: 18px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 18px 18px 12px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 10px #0001;
+    }
+    .download-btn {
+      display: inline-block;
+      background: var(--botao);
+      color: var(--branco);
+      padding: 8px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      margin-top: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: var(--botao-hover); }
+    .faq-item {
+      background: #E7F0FA;
+      border-left: 5px solid var(--azul-lean);
+      margin-bottom: 10px;
+      padding: 13px 16px;
+      border-radius: 8px;
+    }
+    .checklist {
+      margin-top: 14px;
+      background: var(--cinza-bg);
+      border: 1px solid #D6E4F7;
+      border-radius: 7px;
+      padding: 13px 18px;
+    }
+    .footer {
+      text-align: center;
+      color: #395B7A;
+      font-size: 14px;
+      margin-top: 40px;
+      margin-bottom: 18px;
+    }
     @media (max-width: 700px) {
       main { padding: 10px; }
       header, nav { padding: 16px 8px; }
+      .header-content { flex-direction: column; gap: 10px; }
+      .header-logo { height: 46px; }
     }
   </style>
   <script>
-    // Navegação simples para página única
     function showSection(id) {
       document.querySelectorAll('main section').forEach(sec => sec.style.display = 'none');
       document.getElementById(id).style.display = 'block';
@@ -36,15 +120,18 @@
       document.getElementById('link-'+id).classList.add('active');
       window.scrollTo(0, 0);
     }
-    window.onload = function() {
-      showSection('home');
-    }
+    window.onload = function() { showSection('home'); }
   </script>
 </head>
 <body>
   <header>
-    <h1>Lean Company | Plataforma Interna de Treinamento</h1>
-    <p style="margin-top:8px; font-size:1.08em;">Sua central de capacitação, onboarding e desenvolvimento contínuo.</p>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo Lean Company" class="header-logo">
+      <div>
+        <h1>Lean Company | Plataforma Interna de Treinamento</h1>
+        <p style="margin-top:8px; font-size:1.08em;">Sua central de capacitação, onboarding e desenvolvimento contínuo.</p>
+      </div>
+    </div>
   </header>
   <nav>
     <a href="#" id="link-home" onclick="showSection('home')">Início</a>
@@ -78,7 +165,6 @@
         <li><strong>Contato & Suporte:</strong> saiba quem pode ajudar em cada tema.</li>
       </ul>
     </section>
-
     <!-- TRILHAS -->
     <section id="trilhas" style="display:none;">
       <h2>Trilhas de Aprendizado</h2>
@@ -103,7 +189,6 @@
         </ol>
       </div>
     </section>
-
     <!-- MÓDULOS -->
     <section id="modulos" style="display:none;">
       <h2>Módulos Temáticos</h2>
@@ -152,7 +237,6 @@
         </ul>
       </div>
     </section>
-
     <!-- MATERIAIS -->
     <section id="materiais" style="display:none;">
       <h2>Materiais de Apoio</h2>
@@ -180,7 +264,6 @@
         </ul>
       </div>
     </section>
-
     <!-- EXERCÍCIOS -->
     <section id="exercicios" style="display:none;">
       <h2>Exercícios e Avaliações</h2>
@@ -206,7 +289,6 @@
         </div>
       </div>
     </section>
-
     <!-- FAQ -->
     <section id="faq" style="display:none;">
       <h2>FAQ – Dúvidas Frequentes</h2>
@@ -217,7 +299,6 @@
       <div class="faq-item"><b>Posso sugerir melhorias para o treinamento?</b><br>
         Sim! Use o formulário de feedback ou envie direto no grupo oficial Lean.</div>
     </section>
-
     <!-- HABILIDADES -->
     <section id="habilidades" style="display:none;">
       <h2>Desenvolvimento & Matriz de Habilidades</h2>
@@ -240,7 +321,6 @@
         </ol>
       </div>
     </section>
-
     <!-- CONTATO -->
     <section id="contato" style="display:none;">
       <h2>Contato & Suporte</h2>
